@@ -3,10 +3,23 @@ import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material'
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../features/cartSlice';
+import StarIcon from '@mui/icons-material/Star'; // Импортируем иконку звезды
+import { Box } from '@mui/material'; // Импортируем Box для контейнера
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
-  
+
+  // Функция для отображения звездочек
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      stars.push(
+        <StarIcon key={i} color={i < rating ? 'primary' : 'action'} />
+      );
+    }
+    return stars;
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -24,6 +37,9 @@ const ProductCard = ({ product }) => {
           <Typography variant="h6">{product.title}</Typography>
           <Typography variant="body2">{product.description}</Typography>
           <Typography variant="h5">{product.price}₽</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', mt: 1 }}>
+            {renderStars(Math.round(product.rating))} {/* Отображаем рейтинг в виде звезд */}
+          </Box>
           <Button
             variant="contained"
             onClick={() => dispatch(addToCart(product))}

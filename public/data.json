@@ -150,7 +150,7 @@
     "description": "Солнцезащитные, черный",
     "image": "/ray.webp",
     "category": "clothing",
-    "rating": 4.8
+    "rating": 3
     },
     {
     "id": 18,
@@ -177,7 +177,7 @@
     "description": "Кожа, бежевый",
     "image": "/birk.jpg",
     "category": "clothing",
-    "rating": 4.6
+    "rating": 4
     },
     {
     "id": 21,
@@ -258,7 +258,7 @@
  "description": "Грегори Дэвид Робертс",
  "image": "/ten.jpg",
  "category": "books",
- "rating": 4.7
+ "rating": 3
  },
  {
  "id": 30,
@@ -267,7 +267,7 @@
  "description": "Грегори Дэвид Робертс",
  "image": "/shan.jpg",
  "category": "books",
- "rating": 4.8
+ "rating": 2
  }
  ]
 }
